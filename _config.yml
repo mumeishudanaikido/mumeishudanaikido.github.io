@@ -1,0 +1,37 @@
+# Site settings
+title: "Mumei Shudan Aikido"
+description: "Traditional Japanese Aikido training - The path of the warrior, refined through discipline"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://youraikidoclub.com" # your domain
+
+# Dojo Information
+dojo:
+  name: "Mumei Shudan"
+  tagline: "無名集団 - The Nameless Collective"
+  phone: "+65 8282 6186"
+  email: "contact@mumeishudan.com"
+  address: "149C Selegie Road, Singapore 188314"
+  
+# Social Media
+social:
+  instagram: "mumeishudan"
+  instagram_feed_url: "https://www.instagram.com/mumeishudan/?hl=en"
+  facebook: "https://www.facebook.com/MumeiShudan/"
+  
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+# Collections
+collections:
+  instructors:
+    output: true
+    permalink: /instructors/:name/
+    
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md

@@ -1,0 +1,258 @@
+---
+layout: default
+title: Gallery
+---
+
+<section class="page-header">
+    <div class="container">
+        <h1>Gallery</h1>
+        <p>Moments from our training, seminars, and events</p>
+    </div>
+</section>
+
+<section class="gallery-section" style="background: linear-gradient(135deg, #000000, #1a1a1a); padding: 60px 0;">
+    <div class="container">
+        
+        <!-- Gallery Filters -->
+        <div class="gallery-filters" style="display: flex; justify-content: center; gap: 16px; margin-bottom: 48px; flex-wrap: wrap;">
+            <button class="filter-btn active" data-filter="all" style="background: transparent !important; border: 2px solid white !important; color: white !important; padding: 8px 24px !important; font-weight: 600 !important; letter-spacing: 1px !important; text-transform: uppercase !important; font-size: 0.9rem !important; cursor: pointer !important;">All</button>
+            <button class="filter-btn" data-filter="training" style="background: transparent !important; border: 2px solid white !important; color: white !important; padding: 8px 24px !important; font-weight: 600 !important; letter-spacing: 1px !important; text-transform: uppercase !important; font-size: 0.9rem !important; cursor: pointer !important;">Training</button>
+            <button class="filter-btn" data-filter="seminars" style="background: transparent !important; border: 2px solid white !important; color: white !important; padding: 8px 24px !important; font-weight: 600 !important; letter-spacing: 1px !important; text-transform: uppercase !important; font-size: 0.9rem !important; cursor: pointer !important;">Seminars</button>
+            <button class="filter-btn" data-filter="events" style="background: transparent !important; border: 2px solid white !important; color: white !important; padding: 8px 24px !important; font-weight: 600 !important; letter-spacing: 1px !important; text-transform: uppercase !important; font-size: 0.9rem !important; cursor: pointer !important;">Events</button>
+            <button class="filter-btn" data-filter="grading" style="background: transparent !important; border: 2px solid white !important; color: white !important; padding: 8px 24px !important; font-weight: 600 !important; letter-spacing: 1px !important; text-transform: uppercase !important; font-size: 0.9rem !important; cursor: pointer !important;">Grading</button>
+        </div>
+        
+        <!-- Gallery Grid -->
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Images will be loaded by JavaScript -->
+            <div class="gallery-placeholder">
+                <i class="fas fa-images"></i>
+                <p>Add images to <code>/assets/images/gallery/</code> subdirectories</p>
+                <p class="gallery-instruction">
+                    Create folders like:<br>
+                    • <code>/training</code> for Training photos<br>
+                    • <code>/seminars</code> for Seminars photos<br>
+                    • <code>/events</code> for Events photos<br>
+                    • <code>/grading</code> for Grading photos
+                </p>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<!-- Lightbox Overlay -->
+<div id="lightbox" class="lightbox" style="display: none;">
+    <span class="lightbox-close">&times;</span>
+    <div class="lightbox-content">
+        <img id="lightboxImg" src="" alt="">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+        <div class="lightbox-nav">
+            <button id="prevBtn" class="lightbox-btn"><i class="fas fa-chevron-left"></i></button>
+            <button id="nextBtn" class="lightbox-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+</div>
+
+<script>
+// Gallery configuration
+const galleryConfig = {
+    basePath: '{{ "/assets/images/gallery" | relative_url }}',
+    categories: [
+        { name: 'training', label: 'Training' },
+        { name: 'seminars', label: 'Seminars' },
+        { name: 'events', label: 'Events' },
+        { name: 'grading', label: 'Grading' }
+    ],
+    // Add image filenames here for each category
+    images: {
+        training: [],
+        seminars: ['yamashima-seminar-2025-1.JPG','yamashima-seminar-2025-2.JPG','yamashima-seminar-2025-3.JPG','yamashima-seminar-2025-4.JPG'],
+        events: ['aikido_seminar_chennai_09-2018_1.jpg','aikido_seminar_chennai_09-2018_2.jpeg','aikido_seminar_chennai_09-2018_3.jpeg','aikido_seminar_chennai_09-2018_4.jpeg'],
+        grading: []
+    }
+};
+
+let allImages = [];
+let currentImageIndex = 0;
+
+// Dynamically populate images
+function loadGallery() {
+    const grid = document.getElementById('galleryGrid');
+    let hasImages = false;
+    allImages = [];
+    
+    // Check if any category has images
+    for (let category in galleryConfig.images) {
+        if (galleryConfig.images[category].length > 0) {
+            hasImages = true;
+            break;
+        }
+    }
+    
+    if (!hasImages) {
+        // Show placeholder if no images
+        return;
+    }
+    
+    // Clear placeholder
+    grid.innerHTML = '';
+    
+    let imageIndex = 0;
+    
+    // Load images from all categories
+    for (let category in galleryConfig.images) {
+        galleryConfig.images[category].forEach((filename) => {
+            const imagePath = `${galleryConfig.basePath}/${category}/${filename}`;
+            const categoryLabel = galleryConfig.categories.find(c => c.name === category)?.label || category;
+            
+            // Store for lightbox navigation
+            allImages.push({
+                src: imagePath,
+                alt: `${categoryLabel} - ${filename}`,
+                category: category
+            });
+            
+            // Create thumbnail item
+            const item = document.createElement('div');
+            item.className = `gallery-item ${category}`;
+            item.setAttribute('data-category', category);
+            item.setAttribute('data-index', imageIndex);
+            
+            // Thumbnail wrapper with aspect ratio
+            const thumbWrapper = document.createElement('div');
+            thumbWrapper.className = 'thumb-wrapper';
+            
+            const img = document.createElement('img');
+            img.src = imagePath;
+            img.alt = `${categoryLabel} - ${filename}`;
+            img.loading = 'lazy';
+            
+            const overlay = document.createElement('div');
+            overlay.className = 'gallery-overlay';
+            overlay.innerHTML = `
+                <span class="overlay-label">${categoryLabel}</span>
+                <i class="fas fa-search-plus"></i>
+            `;
+            
+            thumbWrapper.appendChild(img);
+            thumbWrapper.appendChild(overlay);
+            item.appendChild(thumbWrapper);
+            grid.appendChild(item);
+            
+            // Add click to open in lightbox - FIXED: use current index
+            const currentIndex = imageIndex;
+            item.addEventListener('click', () => openLightbox(currentIndex));
+            
+            imageIndex++;
+        });
+    }
+}
+
+// Filter functionality
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        
+        // Update active button
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Filter gallery items
+        const items = document.querySelectorAll('.gallery-item');
+        items.forEach(item => {
+            if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+
+// Lightbox functionality
+function openLightbox(index) {
+    currentImageIndex = index;
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImg');
+    const caption = document.getElementById('lightboxCaption');
+    
+    img.src = allImages[index].src;
+    img.alt = allImages[index].alt;
+    caption.textContent = allImages[index].alt;
+    
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % allImages.length;
+    const img = document.getElementById('lightboxImg');
+    const caption = document.getElementById('lightboxCaption');
+    img.src = allImages[currentImageIndex].src;
+    caption.textContent = allImages[currentImageIndex].alt;
+}
+
+function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + allImages.length) % allImages.length;
+    const img = document.getElementById('lightboxImg');
+    const caption = document.getElementById('lightboxCaption');
+    img.src = allImages[currentImageIndex].src;
+    caption.textContent = allImages[currentImageIndex].alt;
+}
+
+// Event listeners
+document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+document.getElementById('lightbox').addEventListener('click', (e) => {
+    if (e.target.id === 'lightbox') {
+        closeLightbox();
+    }
+});
+document.getElementById('prevBtn').addEventListener('click', prevImage);
+document.getElementById('nextBtn').addEventListener('click', nextImage);
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox.style.display === 'flex') {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+    }
+});
+
+// Load gallery on page load
+loadGallery();
+</script>
+
+<!-- EXAMPLE: To add images, uncomment and edit this section with your filenames -->
+<script>
+/*
+// Example - Add your actual image filenames here:
+galleryConfig.images = {
+    training: [
+        'training-1.jpg',
+        'training-2.jpg',
+        'training-3.jpg'
+    ],
+    seminars: [
+        'seminar-2024-01.jpg',
+        'seminar-2024-02.jpg'
+    ],
+    events: [
+        'event-1.jpg',
+        'event-2.jpg'
+    ],
+    grading: [
+        'grading-2024.jpg'
+    ]
+};
+loadGallery(); // Reload after adding images
+*/
+</script>

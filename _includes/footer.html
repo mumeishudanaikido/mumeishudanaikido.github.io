@@ -1,0 +1,51 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <!-- About Section -->
+            <div class="footer-section">
+                <h3>Mumei Shudan Aikido</h3>
+                <p>Master the art of harmony through authentic Aikido training in Singapore by learning from expert instructors trained in Japan, France and the US, with over 40 years of experience combined.</p>
+            </div>
+            
+            <!-- Contact Us -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> {{ site.dojo.address }}</li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:{{ site.dojo.phone }}">{{ site.dojo.phone }}</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:{{ site.dojo.email }}">{{ site.dojo.email }}</a></li>
+                </ul>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="{{ '/schedule/' | relative_url }}">Our Dojos</a></li>
+                    <li><a href="{{ '/instructors/' | relative_url }}">Our Instructors</a></li>
+                    <li><a href="{{ '/trial-class/' | relative_url }}">Free Trial Class</a></li>
+                    <li><a href="{{ '/contact/' | relative_url }}">Get in Touch</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Follow Us Section -->
+        <div class="footer-follow">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="{{ site.social.instagram_feed_url }}" target="_blank" rel="noopener" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                {% if site.social.facebook %}
+                <a href="{{ site.social.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.dojo.name }}. All rights reserved.</p>
+        </div>
+    </div>
+</footer>

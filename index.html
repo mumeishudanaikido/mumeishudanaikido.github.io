@@ -1,0 +1,140 @@
+---
+layout: default
+title: Home
+---
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-banner">
+            <img src="{{ '/assets/images/hero-banner.png' | relative_url }}" alt="Mumei Shudan Aikido Singapore" class="hero-banner-img">
+        </div>
+        <div class="hero-cta">
+            <a href="{{ '/about/' | relative_url }}#what-is-aikido" class="btn btn-primary">What is Aikido?</a>
+            <a href="{{ '/instructors/' | relative_url }}" class="btn btn-secondary">Our Instructors</a>
+            <a href="{{ '/schedule/' | relative_url }}" class="btn btn-secondary">Training Locations</a>
+        </div>
+    </div>
+    <div class="hero-scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
+
+<!-- What is Aikido Section -->
+<section class="intro-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>The Way of the Warrior</h2>
+            <p class="section-subtitle">Where ancient samurai principles meet the modern path of Aikido</p>
+        </div>
+        <div class="intro-content">
+            <div class="intro-text">
+                <h3>Discipline. Honor. Strength.</h3>
+                <p>At Mumei Shudan, we embrace the fierce elegance of the samurai spirit combined with Aikido's philosophy of harmony. Our training forges warriors who walk the path with unwavering discipline while maintaining respect for all beings.</p>
+                <ul class="benefits-list">
+                    <li><i class="fas fa-check-circle"></i> Develop unshakeable mental fortitude and focus</li>
+                    <li><i class="fas fa-check-circle"></i> Master techniques rooted in samurai combat arts</li>
+                    <li><i class="fas fa-check-circle"></i> Cultivate the warrior's spirit through dedicated practice</li>
+                    <li><i class="fas fa-check-circle"></i> Join a brotherhood bound by honor and mutual growth</li>
+                </ul>
+            </div>
+            <div class="intro-image">
+                <img src="{{ '/assets/images/home_1.png' | relative_url }}" alt="Aikido Training at Mumei Shudan">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Info Cards -->
+<section class="info-cards">
+    <div class="container">
+        <div class="cards-grid">
+            <div class="info-card">
+                <div class="card-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3>Class Schedule</h3>
+                <p>We offer classes throughout the week for all skill levels</p>
+                <a href="{{ '/schedule/' | relative_url }}" class="card-link">View Schedule <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="info-card">
+                <div class="card-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Meet Our Instructors</h3>
+                <p>Learn from experienced teachers certified by Aikikai Foundation</p>
+                <a href="{{ '/instructors/' | relative_url }}" class="card-link">Our Team <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="info-card">
+                <div class="card-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>New to Aikido?</h3>
+                <p>Everyone is welcome. Start with a free trial class</p>
+                <a href="{{ '/trial-class/' | relative_url }}" class="card-link">Get Started <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Philosophy Section -->
+<section class="philosophy-section">
+    <div class="container">
+        <div class="philosophy-content">
+            <div class="philosophy-text">
+                <h2>Our Philosophy</h2>
+                <p>Our dojo follows the teachings of O-Sensei Morihei Ueshiba, the founder of Aikido, through the guidance of the Aikikai Foundation. We maintain traditional values while making the art accessible to modern practitioners.</p>
+                <p>Under the guidance of Serge Beraud Sensei (6th Dan), our practice emphasizes:</p>
+                <ul>
+                    <li>Respect and humility in training</li>
+                    <li>Continuous personal development</li>
+                    <li>The integration of body, mind, and spirit</li>
+                    <li>Community and mutual support</li>
+                </ul>
+                <a href="{{ '/about/' | relative_url }}" class="btn btn-outline">Learn About Our Dojo</a>
+            </div>
+            <div class="philosophy-image">
+                <img src="{{ '/assets/images/home_2.png' | relative_url }}" alt="Aikido Philosophy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Latest Updates Section -->
+<section class="latest-updates-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Latest Updates</h2>
+            <p class="section-subtitle">Stay informed about upcoming events, seminars, and training sessions</p>
+        </div>
+        
+        <!-- News List -->
+        <div class="news-list-container">
+            <div class="news-list">
+                {% for post in site.posts limit:10 %}
+                <div class="news-item">
+                    <div class="news-date">{{ post.date | date: "%m/%d" }}</div>
+                    <div class="news-category-badge">{{ post.category }}</div>
+                    <div class="news-title">
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </div>
+                </div>
+                {% endfor %}
+                {% if site.posts.size == 0 %}
+                <div class="news-item no-news">
+                    <p>No news available yet. Check back soon for updates!</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="news-cta">
+            <a href="{{ '/news/' | relative_url }}" class="btn btn-outline">View All News</a>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->

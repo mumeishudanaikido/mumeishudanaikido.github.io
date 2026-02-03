@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Traditional Japanese Aikido training - The path of the warrior, refined through discipline">
+    <title>Contact Us | Mumei Shudan Aikido</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+    <header class="site-header">
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo -->
+                <a href="/" class="logo">
+                    <img src="/assets/images/logo.png" alt="Mumei Shudan" class="logo-image">
+                </a>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <ul class="nav-menu">
+                    <li><a href="/" >Home</a></li>
+                    <li><a href="/about/" >About</a></li>
+                    <li><a href="/schedule/" >Dojos</a></li>
+                    <li><a href="/instructors/" >Instructors</a></li>
+                    <li><a href="/gallery/" >Gallery</a></li>
+                    <li><a href="/contact/" class="active">Contact</a></li>
+                    <li><a href="/trial-class/" class="btn-trial">Free Trial Class</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    
+    <main>
+        <section class="page-header">
+    <div class="container">
+        <h1>Get in Touch</h1>
+        <p>We'd love to hear from you</p>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="container">
+        
+        <div class="contact-grid">
+            
+            <!-- Contact Information -->
+            <div class="contact-info-panel">
+                <h2>Visit Us</h2>
+                
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <p>149C Selegie Road, Singapore 188314</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p><a href="tel:+65 8282 6186">+65 8282 6186</a></p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:contact@mumeishudan.com">contact@mumeishudan.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fab fa-instagram"></i>
+                    <div>
+                        <h4>Instagram</h4>
+                        <p><a href="https://www.instagram.com/mumeishudan/?hl=en" target="_blank" rel="noopener">@mumeishudan</a></p>
+                    </div>
+                </div>
+                
+                <div class="dojo-hours">
+                    <h3>Dojo Hours</h3>
+                    <p>We're open during class times. See our <a href="/schedule/">dojos page</a> for specific times.</p>
+                    <p><em>Please arrive 10-15 minutes before class starts.</em></p>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form-panel">
+                <h2>Send Us a Message</h2>
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+            
+        </div>
+        
+        <!-- Map -->
+        <div class="map-container">
+            <h2>Find Us</h2>
+            <div class="map-embed">
+                <!-- Replace with your Google Maps embed code -->
+                <div class="map-placeholder">
+                    <p>Add Google Maps embed here</p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem;">
+                        Get embed code from: <br>
+                        Google Maps → Search your address → Share → Embed a map
+                    </p>
+                </div>
+                <!-- Example:
+                <iframe src="https://www.google.com/maps/embed?pb=..." 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                </iframe>
+                -->
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<style>
+.contact-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.contact-info-panel,
+.contact-form-panel {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.contact-info-panel h2,
+.contact-form-panel h2 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+}
+
+.info-item {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    width: 30px;
+}
+
+.info-item h4 {
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-dark);
+}
+
+.info-item a {
+    color: var(--secondary-color);
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+.dojo-hours {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--bg-light);
+    border-radius: 8px;
+}
+
+.dojo-hours h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.dojo-hours a {
+    color: var(--secondary-color);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.map-container {
+    margin-top: var(--spacing-xl);
+}
+
+.map-container h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.map-embed {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.map-placeholder {
+    background: var(--bg-light);
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--border-color);
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+    </main>
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <!-- About Section -->
+            <div class="footer-section">
+                <h3>Mumei Shudan Aikido</h3>
+                <p>Master the art of harmony through authentic Aikido training in Singapore by learning from expert instructors trained in Japan, France and the US, with over 40 years of experience combined.</p>
+            </div>
+            
+            <!-- Contact Us -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 149C Selegie Road, Singapore 188314</li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+65 8282 6186">+65 8282 6186</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:contact@mumeishudan.com">contact@mumeishudan.com</a></li>
+                </ul>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/schedule/">Our Dojos</a></li>
+                    <li><a href="/instructors/">Our Instructors</a></li>
+                    <li><a href="/trial-class/">Free Trial Class</a></li>
+                    <li><a href="/contact/">Get in Touch</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Follow Us Section -->
+        <div class="footer-follow">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="https://www.instagram.com/mumeishudan/?hl=en" target="_blank" rel="noopener" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                
+                <a href="https://www.facebook.com/MumeiShudan/" target="_blank" rel="noopener" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mumei Shudan. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    
+    <!-- Custom JavaScript -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

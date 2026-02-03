@@ -1,0 +1,451 @@
+---
+layout: default
+title: Free Trial Class
+---
+
+<section class="page-header">
+    <div class="container">
+        <h1>Start Your Aikido Journey</h1>
+        <p>Your first class is free. No experience necessary.</p>
+    </div>
+</section>
+
+<section class="trial-class-section">
+    <div class="container">
+        
+        <!-- Intro -->
+        <div class="trial-intro">
+            <h2>Try a Class Risk-Free</h2>
+            <p>We believe the best way to understand Aikido is to experience it firsthand. That's why we offer a free trial class to all newcomers. Come see if our dojo is the right fit for you - no pressure, no obligation.</p>
+        </div>
+        
+        <!-- Two Column Layout -->
+        <div class="trial-content-grid">
+            
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <h3>Request Your Free Trial</h3>
+                <p>Fill out the form below and we'll contact you to schedule your first class.</p>
+                
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age-group">Age Group</label>
+                        <select id="age-group" name="age-group">
+                            <option value="">Select...</option>
+                            <option value="youth">Youth (8-14 years)</option>
+                            <option value="teen">Teen (15-17 years)</option>
+                            <option value="adult">Adult (18+ years)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experience">Previous Martial Arts Experience?</label>
+                        <select id="experience" name="experience">
+                            <option value="none">No experience</option>
+                            <option value="beginner">Some experience (1-2 years)</option>
+                            <option value="intermediate">Moderate experience (3-5 years)</option>
+                            <option value="advanced">Advanced (5+ years)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Questions or Comments</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletter" value="yes">
+                            <span>I'd like to receive occasional updates about classes and events</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large">Request Free Trial</button>
+                    
+                    <p class="form-note">We respect your privacy and will never share your information.</p>
+                </form>
+            </div>
+            
+            <!-- Contact Info & What to Expect -->
+            <div class="trial-info">
+                
+                <!-- Contact Details -->
+                <div class="info-box">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Location</strong>
+                                <p>{{ site.dojo.address }}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone</strong>
+                                <p><a href="tel:{{ site.dojo.phone }}">{{ site.dojo.phone }}</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p><a href="mailto:{{ site.dojo.email }}">{{ site.dojo.email }}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-placeholder">
+                        <!-- Replace with actual Google Maps embed -->
+                        <p>Add Google Maps embed code here</p>
+                        <!-- Example:
+                        <iframe src="https://www.google.com/maps/embed?..." width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        -->
+                    </div>
+                </div>
+                
+                <!-- What to Expect -->
+                <div class="info-box">
+                    <h3>What to Expect</h3>
+                    <ul class="expect-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Friendly Welcome</strong>
+                                <p>We'll greet you, show you around, and answer any questions</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Introduction</strong>
+                                <p>Brief overview of Aikido and dojo etiquette</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Hands-On Practice</strong>
+                                <p>You'll join the class and learn basic techniques with a partner</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>No Pressure</strong>
+                                <p>Decide if Aikido is right for you at your own pace</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- What to Bring -->
+                <div class="info-box">
+                    <h3>What to Bring</h3>
+                    <ul class="bring-list">
+                        <li><i class="fas fa-tshirt"></i> Comfortable workout clothes</li>
+                        <li><i class="fas fa-water"></i> Water bottle</li>
+                        <li><i class="fas fa-smile"></i> Open mind and positive attitude</li>
+                    </ul>
+                    <p class="note">Training is done barefoot. Traditional aikido uniform (gi) can be purchased after you join.</p>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>Do I need to be in shape to start?</h4>
+                    <p>No! Aikido training will help you get in shape. We welcome students of all fitness levels and will work with you at your own pace.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Is Aikido effective for self-defense?</h4>
+                    <p>Yes. Aikido teaches practical techniques for neutralizing attacks while minimizing harm. However, it also emphasizes awareness and conflict avoidance as the first line of defense.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>How long does it take to earn a black belt?</h4>
+                    <p>Typically 4-6 years of consistent training. However, Aikido is a lifelong journey, and rank is less important than personal growth and understanding.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>What's the training schedule?</h4>
+                    <p>We offer classes throughout the week for different age groups and skill levels. Check our <a href="{{ '/schedule/' | relative_url }}">schedule page</a> for details.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>How much does it cost?</h4>
+                    <p>Membership fees vary by age and commitment level. We'll discuss pricing options when you visit. Your first class is always free.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h4>Can I just watch a class first?</h4>
+                    <p>Absolutely! You're welcome to observe a class before trying it yourself. However, we find most people prefer to participate and experience Aikido firsthand.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<style>
+.trial-class-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.trial-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.trial-intro h2 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.trial-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Contact Form */
+.contact-form-container {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form-container h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-form-container > p {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-light);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin-top: 4px;
+}
+
+.form-note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: var(--spacing-md);
+}
+
+/* Trial Info */
+.trial-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.info-box {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.info-box h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-details {
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-item {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.contact-item strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.contact-item a {
+    color: var(--secondary-color);
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.map-placeholder {
+    background: var(--bg-light);
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 2px dashed var(--border-color);
+}
+
+.expect-list,
+.bring-list {
+    list-style: none;
+}
+
+.expect-list li {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.expect-list i {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.expect-list strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--primary-color);
+}
+
+.bring-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.bring-list i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.info-box .note {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+    background: var(--bg-light);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* FAQ */
+.faq-section {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid var(--border-color);
+}
+
+.faq-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.faq-item {
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.faq-item h4 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.faq-item a {
+    color: var(--secondary-color);
+}
+
+.faq-item a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .trial-content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
