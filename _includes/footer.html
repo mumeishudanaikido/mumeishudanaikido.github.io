@@ -1,34 +1,23 @@
 <footer class="site-footer">
     <div class="container">
         <div class="footer-content">
-            <!-- Contact Us -->
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <ul class="contact-info">
-                    <li><i class="fas fa-map-marker-alt"></i> {{ site.dojo.address }}</li>
-                    <li><i class="fas fa-phone"></i> <a href="tel:{{ site.dojo.phone }}">{{ site.dojo.phone }}</a></li>
-                    <li><i class="fas fa-envelope"></i> <a href="mailto:{{ site.dojo.email }}">{{ site.dojo.email }}</a></li>
-                </ul>
+            <p class="footer-copyright">&copy; {{ 'now' | date: "%Y" }} {{ site.dojo.name }}. All rights reserved.</p>
+            <div class="social-links">
+                <a href="tel:{{ site.dojo.phone | replace: ' ', '' }}" aria-label="Call us">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="mailto:{{ site.dojo.email }}" aria-label="Email us">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                {% if site.social.facebook %}
+                <a href="{{ site.social.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                {% endif %}
+                <a href="{{ site.social.instagram_feed_url }}" target="_blank" rel="noopener" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
-
-            <!-- Follow Us -->
-            <div class="footer-section footer-follow">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="{{ site.social.instagram_feed_url }}" target="_blank" rel="noopener" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    {% if site.social.facebook %}
-                    <a href="{{ site.social.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.dojo.name }}. All rights reserved.</p>
         </div>
     </div>
 </footer>
