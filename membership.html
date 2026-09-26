@@ -1,0 +1,177 @@
+---
+layout: default
+title: Membership
+---
+
+<section class="page-header">
+    <div class="container">
+        <h1>Membership</h1>
+    </div>
+</section>
+
+<section class="membership-section">
+    <div class="container">
+
+        <div class="fee-table-block">
+            <h2>Training Fees</h2>
+            <p class="fee-note">Prices are in SGD</p>
+            <div class="fee-table-wrapper">
+                <table class="fee-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Adult</th>
+                            <th>Student/Child</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Item">Yearly Payment</td>
+                            <td data-label="Adult">$1,200</td>
+                            <td data-label="Student/Child">$840</td>
+                            <td data-label="Details">Valid for one year.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Item">Quarterly (3-Month) Payment</td>
+                            <td data-label="Adult">$360</td>
+                            <td data-label="Student/Child">$250</td>
+                            <td data-label="Details">Valid for three consecutive months.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Item">Monthly Payment</td>
+                            <td data-label="Adult">$150</td>
+                            <td data-label="Student/Child">$110</td>
+                            <td data-label="Details">All training sessions, access to multiple dojos.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Item">One-time Mat Fee</td>
+                            <td data-label="Adult">$45</td>
+                            <td data-label="Student/Child">$35</td>
+                            <td data-label="Details">One training session.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Item">Affiliated Access</td>
+                            <td data-label="Adult">$15</td>
+                            <td data-label="Student/Child">$10</td>
+                            <td data-label="Details">One training session but for Mumei Shudan affiliated clubs at HQ.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="fee-table-block">
+            <h2>Registration / Grades</h2>
+            <p class="fee-note">Prices are in SGD</p>
+            <div class="fee-table-wrapper">
+                <table class="fee-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Adult</th>
+                            <th>Student/Child</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Item">Registration Fee (one time)</td>
+                            <td data-label="Adult">$40</td>
+                            <td data-label="Student/Child">$40</td>
+                            <td data-label="Details">One-time registration fee.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Item">Grading/Certification Fee</td>
+                            <td data-label="Adult">$60</td>
+                            <td data-label="Student/Child">$60</td>
+                            <td data-label="Details">For Aikido Kyu grading.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+.membership-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.fee-table-block {
+    margin-bottom: var(--spacing-xl);
+}
+
+.fee-table-block h2 {
+    color: var(--primary-color);
+    text-align: center;
+    font-family: var(--font-secondary);
+    letter-spacing: 1px;
+}
+
+.fee-note {
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+}
+
+.fee-table-wrapper {
+    overflow-x: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.fee-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-white);
+    min-width: 560px;
+}
+
+.fee-table thead {
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+}
+
+.fee-table th {
+    color: var(--bg-white);
+    text-align: left;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+.fee-table td {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-bottom: 1px solid var(--bg-light);
+    vertical-align: top;
+}
+
+.fee-table tbody tr:hover {
+    background: var(--bg-light);
+}
+
+.fee-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.fee-table td[data-label="Item"] {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.fee-table td[data-label="Adult"],
+.fee-table td[data-label="Student/Child"] {
+    color: var(--secondary-color);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.fee-table td[data-label="Details"] {
+    color: var(--text-light);
+}
+</style>
