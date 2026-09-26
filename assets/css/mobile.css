@@ -1,0 +1,926 @@
+/* =================================================================
+   Mobile Site - SAMURAI/BUSHIDO THEME (mobile-first)
+   ================================================================= */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #E63946;
+    --accent-color: #C41E3A;
+    --text-dark: #1a1a1a;
+    --text-light: #666666;
+    --bg-light: #f5f5f5;
+    --bg-white: #ffffff;
+    --bg-dark: #0a0a0a;
+    --border-color: #333333;
+
+    --font-primary: 'Noto Sans JP', sans-serif;
+    --font-secondary: 'Noto Serif JP', serif;
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    --transition: all 0.25s ease;
+    --header-height: 64px;
+    --footer-height: 130px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-size: 16px;
+    background-color: var(--bg-white);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: var(--spacing-sm);
+}
+
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.05rem; }
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+ul, ol {
+    padding-left: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.container {
+    width: 100%;
+    padding: 0 var(--spacing-sm);
+}
+
+main {
+    padding-top: var(--header-height);
+    padding-bottom: var(--footer-height);
+    min-height: 60vh;
+}
+
+/* =================================================================
+   Header / Nav
+   ================================================================= */
+.site-header {
+    background: linear-gradient(to bottom, #000000 0%, #1a1a1a 100%);
+    box-shadow: 0 2px 10px rgba(230, 57, 70, 0.3);
+    border-bottom: 2px solid var(--secondary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    padding: var(--spacing-xs) 0;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 48px;
+    position: relative;
+}
+
+.logo-image {
+    height: 44px;
+    width: 44px;
+    object-fit: contain;
+}
+
+.mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.mobile-menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: var(--transition);
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-menu {
+    list-style: none;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: #0a0a0a;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.nav-menu.active {
+    max-height: 500px;
+}
+
+.nav-menu li {
+    border-top: 1px solid rgba(230, 57, 70, 0.2);
+}
+
+.nav-menu a {
+    display: block;
+    padding: var(--spacing-md) var(--spacing-sm);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+}
+
+.nav-menu a.active {
+    color: var(--secondary-color);
+}
+
+
+/* =================================================================
+   Buttons
+   ================================================================= */
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-dark);
+    border-color: var(--border-color);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-large {
+    padding: 18px;
+    font-size: 1rem;
+}
+
+/* =================================================================
+   Page Header / Section Header
+   ================================================================= */
+.page-header {
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+    color: white;
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    color: white;
+    margin-bottom: var(--spacing-xs);
+}
+
+.page-header p {
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.section-subtitle {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* =================================================================
+   Hero (Home)
+   ================================================================= */
+.hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('../images/hero-bg.jpg') center/cover no-repeat;
+    color: white;
+    overflow: hidden;
+    padding: var(--spacing-xl) var(--spacing-sm);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.hero-banner-img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(230, 57, 70, 0.5));
+}
+
+.hero-scroll-indicator {
+    display: none;
+}
+
+/* =================================================================
+   Latest Updates / News List (Home)
+   ================================================================= */
+.latest-updates-section,
+.schedule-section,
+.about-section,
+.instructors-section,
+.membership-section,
+.news-archive-section,
+.trial-class-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.news-item {
+    background: var(--bg-light);
+    padding: var(--spacing-sm);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.news-date {
+    font-weight: 700;
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+}
+
+.news-category-badge {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    margin: var(--spacing-xs) 0;
+}
+
+.news-title a {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.news-cta {
+    text-align: center;
+}
+
+/* =================================================================
+   Dojo Schedule / Calendar (Home)
+   ================================================================= */
+.schedule-intro {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.schedule-image-wrapper {
+    width: 100%;
+}
+
+.schedule-calendar-embed {
+    width: 100%;
+    height: 450px;
+    border: 1px solid var(--border-color);
+}
+
+/* =================================================================
+   About Page
+   ================================================================= */
+.aikido-explanation,
+.philosophy-content,
+.intro-content {
+    margin-bottom: var(--spacing-lg);
+}
+
+.aikido-explanation h2,
+.philosophy-text h2,
+.intro-text h3 {
+    color: var(--primary-color);
+}
+
+.explanation-grid,
+.philosophy-content,
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.philosophy-section {
+    background: var(--bg-light);
+    padding: var(--spacing-xl) 0;
+}
+
+.benefits-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.benefits-list li {
+    padding: var(--spacing-xs) 0;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.benefits-list i {
+    color: var(--secondary-color);
+}
+
+/* =================================================================
+   Instructors Page
+   ================================================================= */
+.instructors-intro {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    color: var(--text-light);
+}
+
+.instructor-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-title {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+}
+
+.instructor-card {
+    background: var(--bg-white);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: var(--spacing-md);
+    border-top: 3px solid var(--secondary-color);
+    overflow: hidden;
+}
+
+.instructor-card.chief {
+    border-top-color: var(--accent-color);
+    border-top-width: 5px;
+}
+
+.instructor-photo img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.photo-placeholder {
+    width: 100%;
+    height: 260px;
+    background: var(--bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: var(--border-color);
+}
+
+.instructor-info {
+    padding: var(--spacing-md);
+}
+
+.instructor-rank {
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.instructor-bio blockquote {
+    border-left: 3px solid var(--secondary-color);
+    padding-left: var(--spacing-sm);
+    font-style: italic;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* =================================================================
+   Membership Page - Fee Tables
+   ================================================================= */
+.fee-table-block {
+    margin-bottom: var(--spacing-xl);
+}
+
+.fee-table-block h2 {
+    text-align: center;
+}
+
+.fee-note {
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+}
+
+.fee-table-wrapper {
+    overflow-x: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    -webkit-overflow-scrolling: touch;
+}
+
+.fee-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-white);
+    min-width: 480px;
+}
+
+.fee-table thead {
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+}
+
+.fee-table th {
+    color: white;
+    text-align: left;
+    padding: var(--spacing-sm);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+.fee-table td {
+    padding: var(--spacing-sm);
+    border-bottom: 1px solid var(--bg-light);
+}
+
+.fee-table td[data-label="Item"] {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.fee-table td[data-label="Adult"],
+.fee-table td[data-label="Student/Child"] {
+    color: var(--secondary-color);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.fee-table td[data-label="Details"] {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* =================================================================
+   News Archive Page
+   ================================================================= */
+.news-archive-item {
+    display: flex;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--bg-light);
+}
+
+.archive-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    color: white;
+    padding: var(--spacing-xs);
+    min-width: 60px;
+    height: fit-content;
+}
+
+.archive-date .day {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.archive-date .month {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.archive-date .year {
+    font-size: 0.65rem;
+    color: #999;
+}
+
+.archive-category {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: white;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    margin-bottom: var(--spacing-xs);
+}
+
+.archive-title a {
+    color: var(--text-dark);
+}
+
+.archive-excerpt {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* =================================================================
+   Trial Class Page
+   ================================================================= */
+.trial-intro {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.trial-content-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.contact-form-container,
+.info-box {
+    background: var(--bg-white);
+    padding: var(--spacing-md);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.trial-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    font-family: var(--font-primary);
+    font-size: 16px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+    font-weight: normal;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin-top: 4px;
+}
+
+.form-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: var(--spacing-sm);
+}
+
+.contact-item,
+.expect-list li {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-item i,
+.expect-list i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.contact-item strong,
+.expect-list strong {
+    display: block;
+}
+
+.contact-item a {
+    color: var(--secondary-color);
+}
+
+.expect-list,
+.bring-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.bring-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+}
+
+.bring-list i {
+    color: var(--primary-color);
+}
+
+.info-box .note {
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background: var(--bg-light);
+    font-size: 0.85rem;
+}
+
+.map-placeholder {
+    background: var(--bg-light);
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--border-color);
+    text-align: center;
+    color: var(--text-light);
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+}
+
+.faq-section {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid var(--border-color);
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.faq-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.faq-item {
+    background: var(--bg-white);
+    padding: var(--spacing-sm);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.faq-item a {
+    color: var(--secondary-color);
+}
+
+/* =================================================================
+   Dojos Page
+   ================================================================= */
+.dojos-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.dojos-section > h2 {
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+}
+
+.dojo-card {
+    background: var(--bg-white);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-top: 3px solid var(--secondary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.dojo-header {
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    padding: var(--spacing-sm);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.dojo-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.dojo-badge {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: white;
+    padding: 3px 10px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    border: 1px solid white;
+}
+
+.dojo-badge.overseas {
+    background: linear-gradient(135deg, #1a1a1a, #333333);
+}
+
+.dojo-details {
+    padding: var(--spacing-md);
+}
+
+.dojo-location {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    align-items: flex-start;
+}
+
+.dojo-location i {
+    color: var(--secondary-color);
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.dojo-info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    height: 220px;
+    border: 0;
+}
+
+.map-container iframe + iframe {
+    margin-top: var(--spacing-xs);
+}
+
+.training-schedule {
+    background: var(--bg-light);
+    padding: var(--spacing-sm);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.training-schedule h4 {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.training-schedule ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.training-schedule li::before {
+    content: "▸";
+    color: var(--secondary-color);
+    margin-right: var(--spacing-xs);
+}
+
+.schedule-group {
+    margin-bottom: var(--spacing-sm);
+}
+
+.schedule-group strong {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* =================================================================
+   Footer (shared include, styled here for mobile)
+   ================================================================= */
+.site-footer {
+    background: linear-gradient(to bottom, #0a0a0a 0%, #000000 100%);
+    color: #999;
+    padding: var(--spacing-md) 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: var(--footer-height);
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    text-align: center;
+}
+
+.footer-copyright {
+    color: #666;
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.social-links a {
+    width: 44px;
+    height: 44px;
+    background: rgba(230, 57, 70, 0.1);
+    border: 2px solid var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+/* =================================================================
+   Small-screen refinements
+   ================================================================= */
+@media (min-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+}

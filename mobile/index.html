@@ -1,0 +1,51 @@
+---
+layout: mobile
+title: Home
+---
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <img src="{{ '/assets/images/hero-banner.png' | relative_url }}" alt="Mumei Shudan Aikido Singapore" class="hero-banner-img">
+    </div>
+</section>
+
+<!-- Latest Updates Section -->
+<section class="latest-updates-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Latest Updates</h2>
+            <p class="section-subtitle">Stay informed about upcoming events, seminars, and training sessions</p>
+        </div>
+
+        <div class="news-list">
+            {% for post in site.posts limit:10 %}
+            <div class="news-item">
+                <div class="news-date">{{ post.date | date: "%m/%d" }}</div>
+                <div class="news-category-badge">{{ post.category }}</div>
+                <div class="news-title">
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </div>
+            </div>
+            {% endfor %}
+            {% if site.posts.size == 0 %}
+            <div class="news-item no-news">
+                <p>No news available yet. Check back soon for updates!</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Dojo Schedule Section -->
+<section class="schedule-section">
+    <div class="container">
+        <div class="schedule-intro">
+            <h2>Dojo Schedule</h2>
+        </div>
+        <div class="schedule-image-wrapper">
+            <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;ctz=Asia%2FSingapore&amp;showPrint=0&amp;mode=AGENDA&amp;showTitle=0&amp;showDate=0&amp;showCalendars=0&amp;bgcolor=%23E63946&amp;src=Y185MmJjYmIxOWNhZGFhMTNlZDcyZTgxNWNiNmVlNTFlNGE0MDBlMGJlZmNlZWM1YjRlNjg5MjNlMGI3ZGQ0NWZkQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=Y185OTAwNThlNTRjZDM4NmVjYTU3MzljNjIxNTVkNzNjZWU0OWY2NDZkODRhMzc5NjRhYzEyNzBmMjk4N2Y3MzM3QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=Y19jYTkyMWQzMzkxOWNjZDlkOGJmZDUxMjUzMGEyYWM0OWMwNTgzYmE0NWU2YmZhNzMxNmYwZGRiMmFhZTc2NTViQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=Y18yNGMzYmY1NDY0NjhmMjY5NjMxYTYxZjhmODE5YjBiNmFjZTM1NjYzODRhNTdkM2QzNDhjZTg4OGY2ZjY0MDg1QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=ZW4uc2luZ2Fwb3JlI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23AD1457&amp;color=%23795548&amp;color=%23D50000&amp;color=%23A79B8E&amp;color=%23616161" style="border: solid 1px var(--border-color)" frameborder="0" scrolling="no" class="schedule-calendar-embed"></iframe>
+        </div>
+    </div>
+</section>

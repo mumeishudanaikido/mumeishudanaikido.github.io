@@ -1,0 +1,28 @@
+<header class="site-header">
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo -->
+                <a href="{{ '/mobile/' | relative_url }}" class="logo">
+                    <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.dojo.name }}" class="logo-image">
+                </a>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <ul class="nav-menu">
+                    <li><a href="{{ '/mobile/' | relative_url }}" {% if page.url == '/mobile/' %}class="active"{% endif %}>Home</a></li>
+                    <li><a href="{{ '/mobile/about/' | relative_url }}" {% if page.url == '/mobile/about/' %}class="active"{% endif %}>About</a></li>
+                    <li><a href="{{ '/mobile/schedule/' | relative_url }}" {% if page.url == '/mobile/schedule/' %}class="active"{% endif %}>Dojos</a></li>
+                    <li><a href="{{ '/mobile/instructors/' | relative_url }}" {% if page.url == '/mobile/instructors/' %}class="active"{% endif %}>Instructors</a></li>
+                    <li><a href="{{ '/mobile/membership/' | relative_url }}" {% if page.url == '/mobile/membership/' %}class="active"{% endif %}>Membership</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
